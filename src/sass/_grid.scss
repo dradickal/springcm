@@ -1,0 +1,79 @@
+//components/grid.scss
+//requires icomoon/variables
+
+//grid variables
+$row-border: 1px solid #777777;
+
+@mixin name-icon($icon) {
+    font-family: 'icomoon';
+    content: $icon;
+    margin-right: 8px;
+}
+
+table {
+    width: $table-width-closed;
+    border-spacing: 0;
+    
+    .open & {
+        width: $table-width-open;
+    }
+}
+
+tbody tr{ 
+    &:nth-of-type(even) {
+        background-color: #eeeeee;
+    }
+    &:hover {
+        background-color: #cccccc;
+    }
+}
+
+
+
+th {
+    font-weight: bold;
+    text-align: left;
+    border-bottom: $row-border;
+}
+
+td {
+    padding: 5px 0px;
+    border-bottom: $row-border;
+}
+
+.name {
+    width: 45%;
+    
+    &.docx:before {
+        @include name-icon($icon-file-word-o);
+    }
+    &.pdf:before {
+        @include name-icon($icon-file-pdf-o);
+    }
+    &.png:before {
+        @include name-icon($icon-file-image-o);
+    }
+    &.ppt:before {
+        @include name-icon($icon-file-powerpoint-o);
+    }
+    &.xlsx:before {
+        @include name-icon($icon-file-excel-o);
+    }
+    &.Folder:before {
+        @include name-icon($icon-folder);
+    }
+    
+}
+
+.desc {
+    width: 30%;
+}
+
+.date {
+    width: 15%;
+}
+
+.select {
+    width: 10%;
+    text-align: center;
+}

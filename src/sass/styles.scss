@@ -1,0 +1,25 @@
+//variables for all
+$body-width: 90vw;
+$actions-width: 45px;
+$actions-margin: 2.5px;
+$actions-total-size: ($actions-width + ($actions-margin * 2));
+$actions-height: $actions-total-size * 5;
+$table-width-closed: calc(#{$body-width} - #{$actions-total-size});
+$table-width-open: calc(#{$body-width} - (#{$actions-total-size} * 3));
+
+body {
+    font: 1rem/1.2rem  arial, sans-serif;
+    width: $body-width;
+    margin: 10px auto 0px;
+}
+
+section {
+    display: flex;
+    flex-direction: row;
+}
+
+@import "./icomoon/variables";
+@import "./icomoon/style";
+@import "_grid";
+@import "_actions";
+

@@ -1,0 +1,85 @@
+@mixin action-icon($icon) {
+    font-family: 'icomoon';
+    content: $icon;
+}
+
+%buttons {
+    width: $actions-width;
+    height: $actions-width;
+    margin: $actions-margin 0px;
+    line-height: $actions-width;
+    text-align: center;
+    color: #ffffff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#folder-actions {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin: $actions-margin;
+    height: $actions-height;
+    overflow: hidden;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: $actions-total-size * 4;
+}
+
+.action {
+    @extend %buttons;
+    background-color: #089999;
+    
+    &.upload:before {
+        @include action-icon($icon-cloud-upload);
+    }
+    &.create_folder:before {
+        @include action-icon($icon-folder-plus);
+    }
+    &.share:before {
+        @include action-icon($icon-share-square-o);
+    }
+    &.cut:before {
+        @include action-icon($icon-scissors);
+    }
+    &.tag:before {
+        @include action-icon($icon-tag);
+    }
+    &.copy:before {
+        @include action-icon($icon-copy);
+    }
+    &.paste:before {
+        @include action-icon($icon-paste);
+    }
+    &.search:before {
+        @include action-icon($icon-search);
+    }
+    &.folder_settings:before {
+        @include action-icon($icon-wrench);
+    }
+    &.send_email:before {
+        @include action-icon($icon-envelope);
+    }
+}
+
+.expand {
+    @extend %buttons;
+    background-color: #08bb99;
+    
+    .open & {
+        width: 100%;
+    }
+    
+    .open &:before {
+        @include action-icon($icon-arrow-right);
+    }
+    
+    &:before {
+        @include action-icon($icon-arrow-left);
+    } 
+}
